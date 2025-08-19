@@ -30,15 +30,24 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
+        btl {
+            bindings = <&tog 1>;
+            key-positions = <4 2 1 0 34>;
         };
 
-        btt {
+        btr {
             bindings = <&tog 1>;
-            key-positions = <4 5>;
+            key-positions = <5 7 8 9 35>;
+        };
+
+        btrl {
+            bindings = <&bt BT_CLR_ALL>;
+            key-positions = <10 11 12 13 33>;
+        };
+
+        btrr {
+            bindings = <&bt BT_CLR_ALL>;
+            key-positions = <16 17 18 19 36>;
         };
     };
 
@@ -90,10 +99,10 @@
 
         layer_1 {
             bindings = <
-        &trans  &trans  &trans          &trans  &trans    &trans  &trans  &trans  &trans  &trans
-        &trans  &trans  &trans          &none   &trans    &trans  &none   &trans  &trans  &trans
-&trans  &trans  &trans  &trans          &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &bt BT_CLR_ALL  &trans  &trans    &trans  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+        &none   &none   &none   &none   &none     &none   &none   &none   &none   &none
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &none   &none   &none     &none   &none   &none
             >;
         };
 
