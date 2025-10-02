@@ -49,6 +49,12 @@
             bindings = <&bt BT_CLR_ALL>;
             key-positions = <16 17 18 19 36>;
         };
+
+        softoff {
+            bindings = <&custom_sleep>;
+            key-positions = <10 11 12 13>;
+            layers = <0>;
+        };
     };
 
     macros {
@@ -65,6 +71,16 @@
                 <&kp LSHFT>,
                 <&macro_tap>,
                 <&kp G &kp I &kp F>;
+        };
+    };
+
+    behaviors {
+        custom_sleep: custom_sleep {
+            compatible = "zmk,behavior-soft-off";
+            label = "CUSTOM_SLEEP";
+            #binding-cells = <0>;
+            hold-time-ms = <10>;
+            split-peripheral-off-on-press;
         };
     };
 
